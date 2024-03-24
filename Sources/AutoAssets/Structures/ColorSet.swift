@@ -1,6 +1,6 @@
+import Foundation
 import struct Paths.Folder
 import struct Paths.PathError
-import Foundation
 
 public struct ColorSet {
  public var contents: Contents = .empty

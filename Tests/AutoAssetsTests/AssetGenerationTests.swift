@@ -25,12 +25,13 @@ final class AssetGenerationTests: XCTestCase {
      .background(Color.mint.opacity(0.75))
    }
   )
-  
+
   print("saving icons")
   try iconSet.write(to: currentFolder, name: "TestIcon.appiconset")
-  
+
   print("deleting iconset")
-  try Folder(path: currentFolder).subfolder(named: "TestIcon.appiconset").delete()
+  try Folder(path: currentFolder).subfolder(named: "TestIcon.appiconset")
+   .delete()
  }
 
  func testColorGeneration() throws {
@@ -42,10 +43,10 @@ final class AssetGenerationTests: XCTestCase {
    any: lumen,
    dark: lumen.unsafeMap(transform: { $0 * 0.88 })
   )
-  
+
   print("saving colors")
   try accentColors.write(to: currentFolder, name: "TestAccentColor.colorset")
-  
+
   print("deleting colorset")
   try Folder(path: currentFolder)
    .subfolder(named: "TestAccentColor.colorset").delete()
